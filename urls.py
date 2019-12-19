@@ -1,4 +1,4 @@
-"""Django URL Configuration
+"""Adding2numbersfromforms URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -14,12 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from mysite.views import GetInput,PostInput, Add
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mysite/getinput', GetInput.as_view()),
-    path('mysite/postinput',PostInput.as_view()),
-    path('mysite/add', Add.as_view()),
+    path('add/', include('formsapp.urls'))
 ]
